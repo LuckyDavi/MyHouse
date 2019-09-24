@@ -10,6 +10,7 @@
   <modules>
 
     <module>MyHouse-Email</module>
+      <module>MyHouse-Shiro</module>
 
   </modules>
   <packaging>pom</packaging>
