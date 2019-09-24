@@ -26,6 +26,16 @@ spring:
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
 
+  # 上传文件总的最大值
+  http:
+    max-file-size: 50MB
+    max-request-size: 50MB
+    enabled: false
+# 上传文件的存放路径
+fileUpload:
+  filepath: "\\MyHouse-Email\\src\\main\\resources\\email\\file\\"
+  imgPath:  "\\MyHouse-Email\\src\\main\\resources\\email\\img\\"
+
 mybatis-plus:
   mapper-locations: classpath:com/xw/*/mapper/xml/*.xml
   configuration:
