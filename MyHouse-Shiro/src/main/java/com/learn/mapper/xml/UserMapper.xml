@@ -12,12 +12,13 @@
         <collection property="roles" ofType="com.learn.model.Role">
             <id column="rid" jdbcType="INTEGER" property="roleId"/>
             <result column="rname" jdbcType="VARCHAR" property="roleName" />
-            <collection property="permissions" ofType="com.learn.model.Permission">
-                <id column="pid" jdbcType="INTEGER" property="pId"/>
-                <result column="pName" jdbcType="VARCHAR" property="pName" />
-                <result column="url" jdbcType="VARCHAR" property="url" />
-            </collection>
+            <collection property="permissions" resultMap="permission"/>
         </collection>
+    </resultMap>
+    <resultMap id="permission" type="com.learn.model.Permission">
+        <id column="pid" jdbcType="INTEGER" property="pId"/>
+        <result column="pName" jdbcType="VARCHAR" property="pName" />
+        <result column="url" jdbcType="VARCHAR" property="url" />
     </resultMap>
 
 <!--    &lt;!&ndash; 通用查询结果列 &ndash;&gt;-->
@@ -25,8 +26,8 @@
 <!--        id, name, age, email, password-->
 <!--    </sql>-->
 
-<!--    <select id="getAllUser" resultType="com.xw.user.pojo.User">-->
-<!--        SELECT * FROM user-->
+<!--    <select id="getAllUser" resultType="com.xw.com.learn.user.pojo.User">-->
+<!--        SELECT * FROM com.learn.user-->
 <!--    </select>-->
 
     <select id="getUserByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">

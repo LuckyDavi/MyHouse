@@ -32,8 +32,8 @@ public class UserServiceImpl implements UserService {
 
 //    @Override
 //    public boolean login(String username,String password) {
-//        User user = getUserByUserName(username);
-//        if(password.equals(user.getPassword())){
+//        User com.learn.user = getUserByUserName(username);
+//        if(password.equals(com.learn.user.getPassword())){
 //            return true;
 //        }else
 //            return false;

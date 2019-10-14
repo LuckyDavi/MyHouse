@@ -1,10 +1,19 @@
 server:
   port: 8081
 
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
-# 该配置的名称是固定的，不可以改变，否则将不能自动加载到数据源中
+
+
 
 spring:
+  application:
+    name: MyHouse-Email #该服务在注册中心的名字
   datasource:
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource

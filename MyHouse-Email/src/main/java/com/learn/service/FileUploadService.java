@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @Author XieWei
- * @Description TODO
+ * @Description EmailService接口
  * @Created Date 2019/9/24 12:01
  **/
 public interface FileUploadService {

@@ -3,14 +3,16 @@ package com.learn;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @Author XieWei
- * @Description TODO
+ * @Description Shiro服务启动类
  * @Created Date 2019/9/24 15:49
  **/
 @SpringBootApplication
+@EnableEurekaClient
 @Slf4j
 @ComponentScan(basePackages = {"com.learn.mapper"})
 public class ShiroApplicationStarter {

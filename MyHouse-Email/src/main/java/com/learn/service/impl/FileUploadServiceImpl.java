@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @Author XieWei
- * @Description TODO
+ * @Description EmailService实现类
  * @Created Date 2019/9/24 12:01
  **/
 @Service
@@ -47,7 +47,7 @@ public class FileUploadServiceImpl implements FileUploadService {
             fileFolderPath = imgPath;
         }
         //项目路径
-        String projectPath = System.getProperty("user.dir");
+        String projectPath = System.getProperty("com.learn.user.dir");
         //文件存放路径
         String fileDestination = projectPath+fileFolderPath;
 

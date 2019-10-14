@@ -6,6 +6,7 @@ import javax.activation.FileDataSource;
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -137,7 +138,7 @@ public class EmailUtil {
         // 准备邮件正文数据
         MimeBodyPart text = new MimeBodyPart();
         //获取项目路径
-        String projectPath = System.getProperty("user.dir")+"\\";
+        String projectPath = System.getProperty("com.learn.user.dir")+"\\";
         //获取所有的图片文件名字
         File file = new File(projectPath+imgFolderPath);
         String [] imgNames = file.list();
@@ -155,6 +156,8 @@ public class EmailUtil {
         List<MimeBodyPart> imgList = new ArrayList<MimeBodyPart>();
         for(String imgName:imgNames){
             MimeBodyPart image = new MimeBodyPart();
+            //通过相对路径获取图片数据，window和linux都能用
+//            InputStream inputStream = this.getClass().getResourceAsStream("/static/2.jpg");
             //通过绝对路径获取图片数据
             DataHandler dh = new DataHandler(new FileDataSource(projectPath + imgFolderPath +imgName));
             image.setDataHandler(dh);
@@ -201,7 +204,7 @@ public class EmailUtil {
         MimeBodyPart text = new MimeBodyPart();
         text.setContent(mailText, encording);
         //获取项目路径
-        String projectPath = System.getProperty("user.dir") + "\\";
+        String projectPath = System.getProperty("com.learn.user.dir") + "\\";
         //获取所有的图片文件名字
         File file = new File(projectPath + fileFolderPath);
         String[] fileNames = file.list();
@@ -252,7 +255,7 @@ public class EmailUtil {
         // 图片
         List<MimeBodyPart> imgList = new ArrayList<>();
         //获取项目路径
-        String projectPath = System.getProperty("user.dir") + "\\";
+        String projectPath = System.getProperty("com.learn.user.dir") + "\\";
         //获取所有的图片文件名字
         File attachFile = new File(projectPath + imgFolderPath);
         String[] imgNames = attachFile.list();

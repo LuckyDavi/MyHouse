@@ -11,9 +11,10 @@
   <description>Send Email</description>
 
   <parent>
-    <groupId>com.learn</groupId>
-    <artifactId>MyHouse</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.21.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <properties>
@@ -24,6 +25,13 @@
   </properties>
 
   <dependencies>
+    <!--添加eureka，将服务提供者注册到eureka中-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+
+
     <!-- 引入Druid依赖，阿里巴巴所提供的数据源 -->
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -86,7 +94,7 @@
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
-      <version>1.2.47</version>
+      <version>1.2.51</version>
     </dependency>
     <!--MyBatis分页插件-->
     <dependency>
@@ -102,6 +110,18 @@
       <version>3.0.1</version>
     </dependency>
   </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Dalston.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <build>
     <finalName>MyHouse-Email</finalName>
